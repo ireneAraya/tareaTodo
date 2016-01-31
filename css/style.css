@@ -1,0 +1,82 @@
+.navbar-brand{
+	float: none;
+}
+
+.navbar-brand h3{
+	margin: 0;
+}
+
+.app-container{
+	width: 600px;
+	margin-top: 100px;
+}
+
+.frmToDo input{
+	height: auto;
+	margin-bottom: 20px;
+	padding-left: 15px;
+	font-size: 30px;
+	line-height: 45px;
+}
+
+.liToDo li{
+	list-style: none;
+}
+
+.choreRow{
+	margin: 20px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #95a5a6;
+}
+
+.btn{
+	font-size: 16px;
+}
+
+.btnReady, .btnErase{
+	padding: 12px;
+	border-radius: 200px;
+}
+
+.btnReady{
+	margin-right: 10px;
+	padding: 12px;
+}
+
+.btnReady:hover{
+	background-color: #2ecc71;
+}
+
+.btnReady:active{
+	background-color: #2ecc71;
+}
+
+.btnErase{
+	padding: 12px 15px;
+	background-color: #c0392b;
+}
+
+.btnErase:hover{
+	background-color: #e74c3c;
+}
+
+.fa-check, .fa-trash{
+	color: white;
+}
+
+.done{
+	text-decoration: line-through;
+}
+
+.list-group-item{
+	border: none;
+	font-size: 36px;
+}
+
+.error{
+	color: #c0392b;
+}
+
+
+
+

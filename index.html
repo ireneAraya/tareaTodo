@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>ToDo App</title>
+
+	<link rel="stylesheet" href="util/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="util/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-app="toDoApp" ng-controller="ToDoListCtrl as ToDoList">
+	<header>
+		<nav class="navbar navbar-default">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+      				<a class="navbar-brand" href="#">
+        				<h3>Angular ToDo App</h3>
+      				</a>
+    			</div>
+  			</div>
+		</nav>
+	</header>
+	<main class="container app-container">
+		<section class="row">
+			<form class="frmToDo" name="frmToDo">
+				<div class="form-group">
+					<input type="text" class="form-control" id="txtToDo" placeholder="Enter tast" ng-model="ToDoList.taskName" required>
+					<button type="submit" class="btn btn-primary pull-right" ng-click="ToDoList.save()" ng-disabled="frmToDo.$invalid">Save</button>
+				</div>
+			</form>
+		</section>
+
+		<section class="row">
+			<div class="col-md-12" >
+				<h1 class="text-center" ng-hide="!ToDoList.tasks.length">Tasks List</h1>
+				<ul class="liToDo col-md-12">
+					<li class="list-group-item error" ng-show="!ToDoList.tasks.length">Please enter task</li>
+					<li ng-repeat="task in ToDoList.tasks" class="list-group-item" ng-class="{done : isDone}">{{task.name}}
+						<div class="col-md-4 pull-right">
+							<button class="btn btnReady" ng-click="isDone=true"><i class="fa fa-check fa-2x"></i></button>
+							<button class="btn btnErase" ng-click="ToDoList.erase($index)"><i class="fa fa-trash fa-2x"></i></button>
+						</div>	
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+<script src="util/jquery/jquery.min.js"></script>
+<script src="util/bootstrap/js/bootstrap.min.js"></script>	
+<script src="util/angular/angular.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers.js"></script>
+</body>
+</html>

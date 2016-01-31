@@ -1,0 +1,24 @@
+<section class="row">
+	<form class="frmToDo" name="frmToDo">
+		<div class="form-group">
+			<input type="text" class="form-control" id="txtToDo" placeholder="Enter chore" ng-model="ToDoList.chore" required>
+			<button type="submit" class="btn btn-primary pull-right" ng-click="ToDoList.save()"
+					ng-disabled="frmToDo.$invalid">Save</button>
+		</div>
+	</form>
+</section>
+
+<section class="row">
+	<div class="col-md-12" >
+		<h1 class="text-center" ng-hide="!ToDoList.tasks.length">Chore List</h1>
+		<ul class="liToDo col-md-12">
+			<li class="list-group-item error" ng-show="!ToDoList.tasks.length">Please enter chore</li>
+			<li ng-repeat="chore in ToDoList.tasks track by $index" class="list-group-item" ng-style="undone">{{chore}}
+				<div class="col-md-4 pull-right">
+					<button class="btn btnReady" ng-click="ToDoList.ready()"><i class="fa fa-check fa-2x"></i></button>
+					<button class="btn btnErase" ng-click="ToDoList.erase($index)"><i class="fa fa-trash fa-2x"></i></button>
+				</div>	
+			</li>
+		</ul>
+	</div>
+</section>
